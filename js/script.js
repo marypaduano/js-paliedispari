@@ -38,22 +38,23 @@ function palindromo(string1, string2) {
 
 
 //**PARI O DISPARI */
-//far scegliere all'utente pari o dispari
-//chiedi all'utente di inserire un numero da 1 a 5
-//genera un numero random da 1 a 5
-//somma i due numeri ottenuti e verifica se siano pari o dispari
-//restituisci il risultato all'utente (hai vinto/hai perso)
 let play = document.getElementById('play')
 
 play.addEventListener('click', function () {
+
+    //recupera elementi dal DOM
     let choise = document.getElementById('choise').value
     let userNumber = parseInt(document.getElementById('user-number').value)
     let pcNumber = document.getElementById('random-number')
+    let sum = document.getElementById('sum')
+    let resultGame = document.getElementById('result-game') 
+    //genera numero random
     pcNumber = Math.floor(Math.random()*(5)+1)
-    let resultGame = document.getElementById('result-game')    
-    let sum = userNumber + pcNumber
-    console.log (choise, userNumber, pcNumber, sum)
 
+    //somma i due numeri   
+    sum = userNumber + pcNumber
+    console.log (choise, userNumber, pcNumber, sum)
+    //controlla se pari o dispari
     if (
         (isEven(sum) && choise === 'pari') ||
         (isOdd(sum) && choise === 'dispari')) {
@@ -63,7 +64,6 @@ play.addEventListener('click', function () {
     }
 }
 )
-
 
 //**function pari o dispari */
 
