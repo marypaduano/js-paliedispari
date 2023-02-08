@@ -8,12 +8,11 @@ let result = document.getElementById('result-word')
 
 button.addEventListener('click', function () {
     let word = document.getElementById('word').value.toLowerCase()
-    console.log(word)
+    // console.log(word)
     let reverseWord = word.split('').reverse().join("")
-    console.log(reverseWord)
+    // console.log(reverseWord)
 
     if (palindromo(word, reverseWord)) {
-        console.log('la parola è palindroma')
         result.innerHTML += 'la parola è palindroma'
 
     } else {
@@ -48,12 +47,12 @@ let play = document.getElementById('play')
 
 play.addEventListener('click', function () {
     let choise = document.getElementById('choise').value
-    let userNumber = document.getElementById('number').value
+    let userNumber = parseInt(document.getElementById('user-number').value)
     let pcNumber = document.getElementById('random-number')
     pcNumber = Math.floor(Math.random()*(5)+1)
     let resultGame = document.getElementById('result-game')    
     let sum = userNumber + pcNumber
-    console.log (choise, userNumber, pcNumber)
+    console.log (choise, userNumber, pcNumber, sum)
 
     if (
         (isEven(sum) && choise === 'pari') ||

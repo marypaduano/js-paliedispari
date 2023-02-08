@@ -10,10 +10,12 @@
 <body>
     <section>
         <div class="container py-5 text-center">
-            <h4 style="text-transform:uppercase;">parola palindroma</h4>
-            <input id="word" type="text" name="word" class="form-control mb-2" value="" placeholder="Inserisci una parola per scoprire se è palindroma">
-            <button class="btn btn-primary mt-3" id="button" value="">Scopri</button> 
-            <h1 id="result-word"></h1>
+            <div class="row">
+                <h4 style="text-transform:uppercase;">parola palindroma</h4>
+                <input id="word" type="text" name="word" class="form-control mb-2" value="" placeholder="Inserisci una parola per scoprire se è palindroma">
+                <button class="btn btn-primary mt-3" id="button" value="">Scopri</button> 
+                <h1 id="result-word"></h1>
+            </div>
         </div>
     </section>
     <hr>
@@ -22,12 +24,12 @@
             <div class="row">
                 <h4 style="text-transform:uppercase;">pari o dispari</h4>
                 <input id="choise" type="text" name="choise" class="form-control mb-2" value="" placeholder="Scrivi pari o dispari">
-                <input id="number" type="text" name="number" class="form-control mb-2" value="" placeholder="Scegli un numero da 1 a 5">
+                <input id="user-number" type="text" name="number" class="form-control mb-2" value="" placeholder="Scegli un numero da 1 a 5">
             </div>
-            <div class="row">                
-                <div class="col border"id="user-number">tuo numero</div>                
+            <div class="row">            
                 <div class="col border"id="random-number">numero pc</div>
-                <button class="btn btn-primary mt-3" id="play" value="">Scopri</button>
+                <div class="col border"id="sum">tuo numero</div> 
+                <button class="btn btn-primary mt-3" id="play" value="">Play</button>
                 <h1 id="result-game"></h1>
             </div>
         </div>
