@@ -12,7 +12,7 @@ button.addEventListener('click', function () {
     let reverseWord = word.split('').reverse().join("")
     // console.log(reverseWord)
 
-    if (palindromo(word, reverseWord)) {
+    if (palindrome(word, reverseWord)) {
         result.innerHTML += 'la parola è palindroma'
 
     } else {
@@ -20,9 +20,9 @@ button.addEventListener('click', function () {
     }
 }
 )
+
 /**function rec*/
-function palindromo(string1, string2) {
-    let result
+function palindrome(string1, string2) {
     if (string1 === string2) {
         return true
     } else {
@@ -30,6 +30,31 @@ function palindromo(string1, string2) {
     }
 
 }
+// soluzione con ciclo FOR
+// button.addEventListener('click', function () {
+      
+//     if (isPalindrome(revWord)) {
+//         result.innerHTML += 'la parola è palindroma'
+
+//     } else {
+//         result.innerHTML += 'la parola NON è palindroma'
+//     }
+// }
+// )
+
+// function isPalindrome (stringa2){
+//     let word = document.getElementById('word').value.toLowerCase() 
+//     let revWord =''
+//     for (let i = stringa2.length -1; i >= 0 ; i--){
+//     const letter = stringa2[i]
+//     revWord += letter
+//     console.log(letter,revWord)
+//     const result = word === stringa2
+//     return result
+// }
+// }
+
+
 
 
 
@@ -41,23 +66,25 @@ function palindromo(string1, string2) {
 let play = document.getElementById('play')
 
 play.addEventListener('click', function () {
-
-    //recupera elementi dal DOM
-    let choise = document.getElementById('choise').value
+    
+    let choise = document.getElementById('choise').value.toLowerCase()
     let userNumber = parseInt(document.getElementById('user-number').value)
-    let pcNumber = document.getElementById('random-number')
-    let sum = document.getElementById('sum')
+    let pcNumberEl = document.getElementById('random-number')
+    let sumEl = document.getElementById('sum')
     let resultGame = document.getElementById('result-game') 
     //genera numero random
-    pcNumber = Math.floor(Math.random()*(5)+1)
+    let pcNumber = Math.floor(Math.random()*(5)+1)
+    pcNumberEl.innerHTML = 'Il Pc ha il numero : '+pcNumber
+    
 
     //somma i due numeri   
-    sum = userNumber + pcNumber
+    let sum = userNumber + pcNumber
+    sumEl.innerHTML = 'la somma dei numeri è : '+sum
     console.log (choise, userNumber, pcNumber, sum)
     //controlla se pari o dispari
     if (
         (isEven(sum) && choise === 'pari') ||
-        (isOdd(sum) && choise === 'dispari')) {
+        (!isEven(sum) && choise === 'dispari')) {
         resultGame.innerHTML += 'HAI VINTO !'
     } else {
         resultGame.innerHTML += 'HAI PERSO !'
@@ -65,7 +92,7 @@ play.addEventListener('click', function () {
 }
 )
 
-//**function pari o dispari */
+//**function pari */
 
 function isEven(num) {
     let rest = num % 2
@@ -76,12 +103,4 @@ function isEven(num) {
     }
 }
 
-function isOdd(num) {
-    let rest = num % 2
-    if (rest === 1) {
-        return true
-    } else {
-        return false
-    }
-}
 
